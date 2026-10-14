@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+  <!-- 1. Header / Navigation -->
+  <header class="site-header">
+    <nav class="nav">
+      <a href="#home" class="brand">Your Name</a>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <ul id="nav-links" class="nav-links">
+        <li><a href="#home">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 2. Hero / About Me -->
+    <section id="home" class="hero">
+      <img src="photo.jpg" alt="Portrait of Your Name" class="photo">
+      <div class="hero-text">
+        <h1>Hi, I'm Your Name</h1>
+        <p class="tagline">BSIT student at Bulacan State University</p>
+        <p>
+          I am a third-year Information Technology student who enjoys building
+          simple, useful systems. I'm learning web development and systems
+          analysis and design, and I like turning ideas into working apps.
+        </p>
+      </div>
+    </section>
+
+    <!-- 3. Projects -->
+    <section id="projects" class="projects">
+      <h2>Projects</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>HydroTrust</h3>
+          <p>
+            A smart water refilling station management system for Aicel's Water
+            Refilling Station. I designed the Staff module, including the
+            Staff Operations Queue screen in Figma.
+          </p>
+          <span class="tag">Systems Analysis &amp; Design</span>
+        </article>
+
+        <article class="card">
+          <h3>Personal Portfolio</h3>
+          <p>
+            This website, built with HTML, CSS, and JavaScript. It is
+            responsive and has a mobile hamburger menu.
+          </p>
+          <span class="tag">HTML / CSS / JS</span>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- 4. Footer / Contact -->
+  <footer id="contact" class="footer">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:mjsfcamua@gmail.com">mjsfcamua@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/your-username" target="_blank" rel="noopener">github.com/your-username</a></p>
+    <p class="copy">&copy; 2026 Your Name</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
