@@ -140,8 +140,12 @@ a {
   background: var(--primary);
   color: white;
   border-radius: 20px;
-  font-size: 0.8rem;
+  font-size: 0.8rem;    
+  user-select: none;
+  -webkit-user-select: none;
+
 }
+
 
 .footer {
   background: var(--dark);
@@ -163,18 +167,27 @@ a {
 @media (max-width: 700px) {
   .menu-toggle {
     display: block;
+    order: 3; 
   }
 
   .nav {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+  }
+
+  .brand {
+    font-size: 1.1rem;
   }
 
   .nav-links {
     display: none;
-    flex-direction: column;
-    width: 100%;
+    flex-direction: row;
+    width: auto;
     gap: 0.8rem;
-    padding-top: 1rem;
+    padding-top: 0;
+    margin-left: auto;
+    order: 2;
+    font-size: 0.9rem;
   }
 
   .nav-links.open {
@@ -189,4 +202,86 @@ a {
   .cards {
     grid-template-columns: 1fr;
   }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero-text {
+  animation: fadeUp 0.8s ease-out;
+}
+
+.photo {
+  animation: fadeUp 0.8s ease-out, float 3s ease-in-out 0.8s infinite;
+}
+
+.card {
+  animation: fadeUp 0.8s ease-out both;
+}
+
+.card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.nav-links a {
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #93c5fd;
+  transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.menu-toggle {
+  transition: transform 0.3s;
+}
+
+.menu-toggle:hover {
+  transform: rotate(90deg);
+}
+
+.nav-links.open {
+  animation: slideIn 0.3s ease-out;
+}
+
+.tag {
+  transition: transform 0.2s;
+}
+
+.tag:hover {
+  transform: scale(1.1);
 }
